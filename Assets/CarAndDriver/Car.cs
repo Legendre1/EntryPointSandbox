@@ -12,6 +12,4 @@ public class Car
         Debug.Log("I am a car, and I now have driver: " + mDriver);
     }
 
-
-
 }

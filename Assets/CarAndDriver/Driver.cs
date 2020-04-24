@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Driver
+public class Driver : Human
 {
     private Car mCar;
     private void Drive()
@@ -11,9 +11,13 @@ public class Driver
         mCar = new Car();
         mCar.AddDriver(this);
 
+        //because I inherit from Human, I can call this method
+        LiveAndDie();
+
         Debug.Log("Let's drive!");
 
-        //
+        //Alex begin here!
+        
     }
 
 

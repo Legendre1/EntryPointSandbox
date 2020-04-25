@@ -15,6 +15,7 @@ public class Driver : Human
         LiveAndDie();
 
         Debug.Log("Let's drive!");
+        Debug.Log("Boo, not cool!");
 
         //Alex begin here!
         

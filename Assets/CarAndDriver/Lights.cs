@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lights : MonoBehaviour
+public class Lights 
 {
     
 }

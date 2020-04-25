@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trans 
+public class Transmission
 {
     private object[] Gears;
     
@@ -11,6 +11,9 @@ public class Trans
     public void GrindGears()
     {
         Debug.Log("Krggggksjjnk");
+
     }
+
+   
 }
 

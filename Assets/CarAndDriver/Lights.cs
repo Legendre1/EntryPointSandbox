@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Lights 
 {
-    
+    public void FlipLights()
+    {
+        Debug.Log("Lights on for safety Michael");
+    }
 }

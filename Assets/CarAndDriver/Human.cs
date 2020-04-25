@@ -12,5 +12,9 @@ public class Human
     {
         Debug.Log("These are the days of our lives...");
     }
+    public void Michael()
+    {
+        Debug.Log("Michael: Where does Old Canyon Road go?");
+    }
 
 }

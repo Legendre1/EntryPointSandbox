@@ -7,25 +7,53 @@ public class Wheel
     private object[] rims;
 
     private object[] tread;
-    private Car mCar;
+    
     public void Move()
     {
-        Debug.Log("I have four wheels");
-        mCar = new Car();
-        mCar.AddWheel(this);
-
-        Debug.Log("Do It!");
+        Debug.Log("Wheels Activated");
+        
     }
-    //#region Static Access
-
-    //private static Wheel sWheel;
-    //public static void InitializeWheel()
-    //{
-//        sWheel = new Wheel();
-        //sWheel.Move();
-    //}
-
-    //#endregion
+    public void WheelRotationRight(int Tire)
+    {
+       
+        if(Tire == 0)
+        {
+            Debug.Log("Front Driver Tire Rotation -35 Degrees");
+        }
+        else if(Tire == 1)
+        {
+            Debug.Log("Front Passenger Tire Rotation -35 Degrees");
+        }
+        else if(Tire == 2)
+        {
+            Debug.Log("Rear Driver Tire Rotation 0 Degrees");
+        }
+        else if(Tire == 3)
+        {
+            Debug.Log("Rear Passenger Tire Rotation 0 Degrees");
+        }
+    }
+    public void WheelRotationLeft(int Tire)
+    {
+        
+        if(Tire == 0)
+        {
+            Debug.Log("Front Driver Tire Rotation 35 Degrees");
+        }
+        else if(Tire == 1)
+        {
+            Debug.Log("Front Passenger Tire Rotation 35 Degrees");
+        }
+        else if(Tire == 2)
+        {
+            Debug.Log("Rear Driver Tire Rotation 0 Degrees");
+        }
+        else if(Tire == 3)
+        {
+            Debug.Log("Rear Passenger Tire Rotation 0 Degrees");
+        }
+        
+    }
 } 
         
     

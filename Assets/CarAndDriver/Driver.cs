@@ -10,12 +10,25 @@ public class Driver : Human
         Debug.Log("I am a driver, and I will now make a car.");
         mCar = new Car();
         mCar.AddDriver(this);
-
+        mCar.AddEngine();
+        mCar.AddAutomattic();
+        mCar.AddLights();
+        mCar.AddWheels();
+        //mCar.AddStandard();
+        //mCar.PutInD();
+        //mCar.PutInFirst();
+        //mCar.Forward();
+        //mCar.Darkness();
+        //mCar.HitTheGas();
+        Michael();
+        mCar.ActivateKitt();
+        mCar.TurnRight();
+        mCar.TurnLeft();
+        
         //because I inherit from Human, I can call this method
         LiveAndDie();
 
         Debug.Log("Let's drive!");
-        Debug.Log("Boo, not cool!");
 
         //Alex begin here!
         

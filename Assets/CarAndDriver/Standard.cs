@@ -7,7 +7,13 @@ public class Standard : Transmission
     
     public void PutInGear(int Gear)
     {
-        GrindGears();
         Debug.Log("I am in gear " + Gear);
     }
+    public void GrindGears()
+    {
+        Debug.Log("Krggggksjjnk");
+        TransmissionEngaged();
+
+    }
+    
 }

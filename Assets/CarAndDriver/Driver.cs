@@ -11,7 +11,7 @@ public class Driver : Human
         mCar = new Car();
         mCar.AddDriver(this);
         mCar.AddEngine();
-        mCar.AddAutomattic();
+        mCar.AddAutomatic();
         mCar.AddLights();
         mCar.AddWheels();
         //mCar.AddStandard();

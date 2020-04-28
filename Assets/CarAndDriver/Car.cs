@@ -7,7 +7,7 @@ public class Car
     private Driver mDriver;
     private Wheel[] mWheel;
     private Engine mEngine;
-    private Automattic mAutomattic;
+    private Automatic mAutomatic;
     private Lights mLights;
     private Standard mStandard;
 
@@ -22,9 +22,9 @@ public class Car
         mEngine = new Engine();
         Debug.Log("Knight Industries turbojet with modified afterburners detected");
     }
-    public void AddAutomattic()
+    public void AddAutomatic()
     {
-        mAutomattic = new Automattic();
+        mAutomatic = new Automatic();
         Debug.Log("8-speed turbodrive transmission detected");
     }
     public void AddStandard()
@@ -56,11 +56,12 @@ public class Car
     }
     public void PutInD()
     {
-        mAutomattic.PutInDrive();
+        mAutomatic.PutInDrive();
     }
     public void PutInFirst()
     {
         mStandard.PutInGear(1);
+        mStandard.GrindGears();
     }
     public void Forward()
     {
@@ -94,7 +95,7 @@ public class Car
     {
         Debug.Log("K.I.T.T.: Were I to hazard a guess, I'd say into an old canyon.");
         Debug.Log("Engaging Alpha Circuit");
-        mAutomattic.PutInDrive();
+        mAutomatic.PutInDrive();
         mWheel[0].Move();
         mLights.FlipLights();
         mEngine.Ignition();

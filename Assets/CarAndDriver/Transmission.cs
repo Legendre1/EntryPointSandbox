@@ -8,9 +8,9 @@ public class Transmission
     
 
 
-    public void GrindGears()
+    public void TransmissionEngaged()
     {
-        Debug.Log("Krggggksjjnk");
+        Debug.Log("Power Train now transferring energy!");
 
     }
 

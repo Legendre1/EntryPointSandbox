@@ -12,18 +12,18 @@ public class Driver : Human
         mCar.AddDriver(this);
         mCar.AddEngine();
         mCar.AddAutomatic();
+        //mCar.PutInD();
         mCar.AddLights();
         mCar.AddWheels();
         //mCar.AddStandard();
-        //mCar.PutInD();
         //mCar.PutInFirst();
+        Michael();
+        mCar.ActivateKitt();
         //mCar.Forward();
         //mCar.Darkness();
         //mCar.HitTheGas();
-        Michael();
-        mCar.ActivateKitt();
-        mCar.TurnRight();
-        mCar.TurnLeft();
+        //mCar.TurnRight();
+        //mCar.TurnLeft();
         
         //because I inherit from Human, I can call this method
         LiveAndDie();

@@ -10,6 +10,9 @@ public class Automatic : Transmission
         Debug.Log("Now in drive mode");
         TransmissionEngaged();
     }
-    
+     public override int GetTopGear()
+    {
+        return 8;
+    }
  
 }

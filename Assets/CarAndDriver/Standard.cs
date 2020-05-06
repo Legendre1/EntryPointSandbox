@@ -13,7 +13,11 @@ public class Standard : Transmission
     {
         Debug.Log("Krggggksjjnk");
         TransmissionEngaged();
-
+       
+    }
+    public override int GetTopGear()
+    {
+        return 5;
     }
     
 }

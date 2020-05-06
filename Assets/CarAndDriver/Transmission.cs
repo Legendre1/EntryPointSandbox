@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Transmission
+public class Transmission : GearBox
 {
     private object[] Gears;
     
@@ -10,10 +10,10 @@ public class Transmission
 
     public void TransmissionEngaged()
     {
-        Debug.Log("Power Train now transferring energy!");
-
+        Debug.Log("Power Train now transferring energy to " + GetTopGear() + "-Speed Transmission");
+        
     }
-
+   
    
 }
 

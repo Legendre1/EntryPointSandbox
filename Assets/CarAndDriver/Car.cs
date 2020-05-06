@@ -25,7 +25,7 @@ public class Car
     public void AddAutomatic()
     {
         mAutomatic = new Automatic();
-        Debug.Log("8-speed turbodrive transmission detected");
+        Debug.Log("Turbodrive transmission detected");
     }
     public void AddStandard()
     {
@@ -100,6 +100,7 @@ public class Car
         mLights.FlipLights();
         mEngine.Ignition();
         mEngine.RevUp();
+        
     }
     
 }

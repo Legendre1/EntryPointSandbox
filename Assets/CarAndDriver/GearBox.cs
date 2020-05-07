@@ -8,6 +8,6 @@ public abstract class GearBox
     {
         return 6;
     }
-    //public abstract void TurnGears();
+    protected abstract void TurnGears();
    
 }

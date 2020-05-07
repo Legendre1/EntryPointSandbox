@@ -13,7 +13,11 @@ public class Transmission : GearBox
         Debug.Log("Power Train now transferring energy to " + GetTopGear() + "-Speed Transmission");
         
     }
-   
+   protected override void TurnGears()
+   {
+       Debug.Log("Gears Turned");
+       
+   }
    
 }
 

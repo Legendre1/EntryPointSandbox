@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wheel 
+public class Wheel : CarParts
 {
     private object[] rims;
 
@@ -10,7 +10,7 @@ public class Wheel
     
     public void Move()
     {
-        Debug.Log("Wheels Activated");
+        Debug.Log(GetWheelCount() + " Wheels Activated");
         
     }
     public void WheelRotationRight(int Tire)

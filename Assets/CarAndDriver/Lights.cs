@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lights 
+public class Lights : CarParts
 {
     public void FlipLights()
     {
-        Debug.Log("Lights on for safety Michael");
+        Debug.Log(GetHeadLightCount() + " Lights on for safety Michael");
     }
 }

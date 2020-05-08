@@ -10,6 +10,7 @@ public class Car
     private Automatic mAutomatic;
     private Lights mLights;
     private Standard mStandard;
+    
 
     public void AddDriver(Driver d)
     {
@@ -20,6 +21,7 @@ public class Car
     public void AddEngine()
     {
         mEngine = new Engine();
+        
         Debug.Log("Knight Industries turbojet with modified afterburners detected");
     }
     public void AddAutomatic()
@@ -46,7 +48,7 @@ public class Car
                 {
                     mWheel[n] = new Wheel();
                 }
-        Debug.Log("Four Wheels Detected!");
+        Debug.Log("Wheels Detected!");
         
     }
    
@@ -91,6 +93,8 @@ public class Car
         
     }
    
+
+     
     public void ActivateKitt()
     {
         Debug.Log("K.I.T.T.: Were I to hazard a guess, I'd say into an old canyon.");

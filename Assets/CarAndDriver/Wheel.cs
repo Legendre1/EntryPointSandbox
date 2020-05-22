@@ -10,7 +10,7 @@ public class Wheel : CarParts
     
     public void Move()
     {
-        Debug.Log(GetWheelCount() + " Wheels Activated");
+        Debug.Log(car.GetWheelCount() + " Wheels Activated");
         
     }
     public void WheelRotationRight(int Tire)

@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class Car 
 {
+    private const int numberOfWheels = 4;
+    private const int numberOfHeadLights = 2;
+
+   
+    public static int GetWheelCount()
+    {
+        return numberOfWheels;
+    }
+    public static int GetHeadLightCount()
+    {
+        return numberOfHeadLights;
+    }
     private Driver mDriver;
     private Wheel[] mWheel;
     private Engine mEngine;
     private Automatic mAutomatic;
     private Lights mLights;
     private Standard mStandard;
+    private Dictionary <string, CarParts> mCarPartsDictionary;
     
 
     public void AddDriver(Driver d)
@@ -55,6 +68,9 @@ public class Car
     public void StartEngine()
     {
         mEngine.Ignition();
+        mCarPartsDicitonary = new Dictionary <string, CarParts>();
+        mCarPartsDictionary.Add("engine", mEngine);
+        mCarPartsDictionary["engine"];
     }
     public void PutInD()
     {

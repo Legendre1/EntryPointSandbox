@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CarParts 
 {
-    private static int numberOfWheels = 4;
-    private static int numberOfHeadLights = 2;
+    private string mMaterial;
+    private float mMass;
+    public virtual void getPrice()
+    {
+        return 5 * mMass;
 
-   
-    public static int GetWheelCount()
-    {
-        return numberOfWheels;
     }
-    public static int GetHeadLightCount()
-    {
-        return numberOfHeadLights;
-    }
+
 }

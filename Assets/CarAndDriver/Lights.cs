@@ -6,6 +6,6 @@ public class Lights : CarParts
 {
     public void FlipLights()
     {
-        Debug.Log(car.GetHeadLightCount() + " Lights on for safety Michael");
+        Debug.Log(Car.GetHeadLightCount() + " Lights on for safety Michael");
     }
 }

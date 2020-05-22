@@ -6,9 +6,10 @@ public class CarParts
 {
     private string mMaterial;
     private float mMass;
-    public virtual void getPrice()
+    public virtual float getPrice()
     {
         return 5 * mMass;
+       
 
     }
 

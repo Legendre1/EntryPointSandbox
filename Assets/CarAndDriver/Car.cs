@@ -68,9 +68,9 @@ public class Car
     public void StartEngine()
     {
         mEngine.Ignition();
-        mCarPartsDicitonary = new Dictionary <string, CarParts>();
+        mCarPartsDictionary = new Dictionary <string, CarParts>();
         mCarPartsDictionary.Add("engine", mEngine);
-        mCarPartsDictionary["engine"];
+       
     }
     public void PutInD()
     {
@@ -91,7 +91,11 @@ public class Car
     }
     public void HitTheGas()
     {
-        mEngine.RevUp();
+        //mEngine.RevUp();
+        CarParts tempCarParts = mCarPartsDictionary["engine"];
+        Engine tempEngine = (Engine)tempCarParts;
+
+        tempEngine.RevUp();
     }
     public void TurnRight()
     {

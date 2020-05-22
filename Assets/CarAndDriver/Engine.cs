@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Engine 
+public class Engine : CarParts
 {
     private object[] radiator;
     private object[] OilPan;
-    private object[] SerpentineBelt;
+    private object[] SerpentinteeBelt;
     private object[] DriveTrain;
 
     public void Ignition()

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public abstract class GearBox
 {
+    public void TransmissionEngaged()
+    {
+        Debug.Log("Power Train now transferring energy to " + GetTopGear() + "-Speed Transmission");
+        
+    }
     public virtual int GetTopGear()
     {
-        return 6;
+        return 5;
     }
     protected abstract void TurnGears();
    

@@ -16,115 +16,211 @@ public class Car
     {
         return numberOfHeadLights;
     }
+    private int mTransmissionType;
     private Driver mDriver;
     private Wheel[] mWheel;
     private Engine mEngine;
-    private Automatic mAutomatic;
-    private Lights mLights;
-    private Standard mStandard;
+    private TransmissionAutomatic mTransmissionAutomatic;
+    private HeadLights mHeadLights;
+    private TransmissionStandard mTransmissionStandard;
     private Dictionary <string, CarParts> mCarPartsDictionary;
-    
 
+   
+    
+    
     public void AddDriver(Driver d)
     {
         mDriver = d;
         Debug.Log("I am a car, and I now have driver: " + mDriver);  
-
-    }
-    public void AddEngine()
-    {
-        mEngine = new Engine();
         
+    }
+    public void MakeCar(int mTransmissionType)
+    {
+        //Add Engine
+        mEngine = new Engine();
         Debug.Log("Knight Industries turbojet with modified afterburners detected");
-    }
-    public void AddAutomatic()
-    {
-        mAutomatic = new Automatic();
-        Debug.Log("Turbodrive transmission detected");
-    }
-    public void AddStandard()
-    {
-        mStandard = new Standard();
-        Debug.Log("Standard transmission detected");
-
-    }
-    public void AddLights()
-    {
-        mLights = new Lights();
+        
+        //Add headlights
+        mHeadLights = new HeadLights();
         Debug.Log("High luminosity light cluster detected");
-    }
 
-    public void AddWheels()
-    {
+        //Add Wheels
         mWheel = new Wheel[4];
             for(int n = 0; n < 4; n++)
                 {
                     mWheel[n] = new Wheel();
                 }
         Debug.Log("Wheels Detected!");
-        
+
+        //Add Transmission
+        if(mTransmissionType == 0)
+        {
+            AddTransmissionStandard();
+        }
+        else if(mTransmissionType != 0)
+        {
+            AddTransmissionAutomatic();
+        }
+
     }
-   
-    public void StartEngine()
+
+    public void TurnCarOn()
     {
+        //Start engine
         mEngine.Ignition();
         mCarPartsDictionary = new Dictionary <string, CarParts>();
         mCarPartsDictionary.Add("engine", mEngine);
-       
-    }
-    public void PutInD()
-    {
-        mAutomatic.PutInDrive();
-    }
-    public void PutInFirst()
-    {
-        mStandard.PutInGear(1);
-        mStandard.GrindGears();
-    }
-    public void Forward()
-    {
-        mWheel[0].Move();
-    }
-    public void Darkness()
-    {
-        mLights.FlipLights();
-    }
-    public void HitTheGas()
-    {
-        //mEngine.RevUp();
-        CarParts tempCarParts = mCarPartsDictionary["engine"];
-        Engine tempEngine = (Engine)tempCarParts;
 
-        tempEngine.RevUp();
+        //HeadLights on for safety
+        mHeadLights.FlipLights();
+
     }
-    public void TurnRight()
+
+    public void CheckSteering()
     {
+        //Turn right
         for(int n = 0; n < 4; n++)
         {
             mWheel[n].WheelRotationRight(n);
         }
-    }
-    public void TurnLeft()
-    {
+
+        //Turn left
         for(int n = 0; n < 4; n++)
         {
             mWheel[n].WheelRotationLeft(n);  
         }
-        
     }
+
+    public void DriveCar(int mTransmissionType)
+    {
+        //Engage Transmission; put the car in gear
+        if(mTransmissionType == 0)
+        {
+            mTransmissionStandard.PutInGear(1);
+        }
+        else if(mTransmissionType != 0)
+        {
+            mTransmissionAutomatic.PutInDrive();
+        }
+
+        //Wheel motion
+        mWheel[0].Move();
+
+        //Press the gas; put the petal to the metal
+        CarParts part = null;
+        if(mCarPartsDictionary.TryGetValue("engine", out part))
+        {
+            CarParts tempCarParts = mCarPartsDictionary["engine"];
+            Engine tempEngine = (Engine)tempCarParts;
+            tempEngine.RevUp();
+        }
+    }
+
+    public void AddTransmissionAutomatic()
+    {
+        mTransmissionAutomatic = new TransmissionAutomatic();
+        Debug.Log("Turbodrive transmission detected");
+    }
+    public void AddTransmissionStandard()
+    {
+        mTransmissionStandard = new TransmissionStandard();
+        Debug.Log("Standard transmission detected");
+
+    }
+    public void ActivateKitt()
+    {
+        //Debug.Log("K.I.T.T.: Were I to hazard a guess, I'd say into an old canyon.");
+        MakeCar(1);
+        Debug.Log("Engaging Alpha Circuit");
+        AddTransmissionAutomatic();
+        CheckSteering();
+        DriveCar(1);
+  
+    }
+
+    //public void ForewardMotion()
+    //{
+    //    mWheel[0].Move();
+    //}
+    
+    //public void HitTheGas()
+    //{
+    //    CarParts part = null;
+    //    if(mCarPartsDictionary.TryGetValue("engine", out part))
+    //    {
+    //        CarParts tempCarParts = mCarPartsDictionary["engine"];
+    //        Engine tempEngine = (Engine)tempCarParts;
+    //        tempEngine.RevUp();
+    //    }
+    //}
+
+    //public void AddEngine()
+    //{
+    //    mEngine = new Engine();
+    //    Debug.Log("Knight Industries turbojet with modified afterburners detected");
+    //}
+   
+    //public void AddHeadLights()
+    //{
+    //    mHeadLights = new HeadLights();
+    //    Debug.Log("High luminosity light cluster detected");
+    //}
+
+    //public void AddWheels()
+    //{
+    //    mWheel = new Wheel[4];
+    //        for(int n = 0; n < 4; n++)
+    //            {
+    //                mWheel[n] = new Wheel();
+    //            }
+    //    Debug.Log("Wheels Detected!");
+        
+    //}
+   
+    //public void StartEngine()
+    //{
+    //    mEngine.Ignition();
+    //    mCarPartsDictionary = new Dictionary <string, CarParts>();
+    //    mCarPartsDictionary.Add("engine", mEngine);  
+    //}
+
+    //public void PutInD()
+    //{
+    //    mTransmissionAutomatic.PutInDrive();
+    //}
+
+    //public void PutInFirst()
+    //{
+    //    mTransmissionStandard.PutInGear(1);
+    //}
+
+  
+
+    //public void Darkness()
+    //{
+    //    mHeadLights.FlipLights();
+    //}
+
+  
+
+    //public void TurnRight()
+    //{
+    //    for(int n = 0; n < 4; n++)
+    //    {
+    //        mWheel[n].WheelRotationRight(n);
+    //    }
+    //}
+
+    //public void TurnLeft()
+    //{
+    //    for(int n = 0; n < 4; n++)
+    //    {
+    //        mWheel[n].WheelRotationLeft(n);  
+    //    }  
+    //}
    
 
      
-    public void ActivateKitt()
-    {
-        Debug.Log("K.I.T.T.: Were I to hazard a guess, I'd say into an old canyon.");
-        Debug.Log("Engaging Alpha Circuit");
-        mAutomatic.PutInDrive();
-        mWheel[0].Move();
-        mLights.FlipLights();
-        mEngine.Ignition();
-        mEngine.RevUp();
-        
-    }
+    
     
 }

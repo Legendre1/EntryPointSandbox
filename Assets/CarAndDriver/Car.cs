@@ -18,11 +18,12 @@ public class Car
     }
     private int mTransmissionType;
     private Driver mDriver;
-    private Wheel[] mWheel;
     private Engine mEngine;
-    private TransmissionAutomatic mTransmissionAutomatic;
+    private Wheel[] mWheel;
     private HeadLights mHeadLights;
+    private TransmissionAutomatic mTransmissionAutomatic;
     private TransmissionStandard mTransmissionStandard;
+    private CarBrand mCarBrand;
     private Dictionary <string, CarParts> mCarPartsDictionary;
 
    
@@ -31,8 +32,7 @@ public class Car
     public void AddDriver(Driver d)
     {
         mDriver = d;
-        Debug.Log("I am a car, and I now have driver: " + mDriver);  
-        
+        Debug.Log("I am a car, and I now have driver: " + mDriver);     
     }
     public void MakeCar(int mTransmissionType)
     {
@@ -57,13 +57,13 @@ public class Car
         {
             AddTransmissionStandard();
         }
-        else if(mTransmissionType != 0)
+        else if(mTransmissionType == 1)
         {
             AddTransmissionAutomatic();
+            
         }
-
+        Debug.Log("You are driving a " + mCarBrand);
     }
-
     public void TurnCarOn()
     {
         //Start engine
@@ -74,8 +74,10 @@ public class Car
         //HeadLights on for safety
         mHeadLights.FlipLights();
 
+        //Check Steering
+        Debug.Log("Checking max steering angle...");
+        CheckSteering();
     }
-
     public void CheckSteering()
     {
         //Turn right
@@ -90,7 +92,6 @@ public class Car
             mWheel[n].WheelRotationLeft(n);  
         }
     }
-
     public void DriveCar(int mTransmissionType)
     {
         //Engage Transmission; put the car in gear
@@ -115,7 +116,6 @@ public class Car
             tempEngine.RevUp();
         }
     }
-
     public void AddTransmissionAutomatic()
     {
         mTransmissionAutomatic = new TransmissionAutomatic();
@@ -125,19 +125,39 @@ public class Car
     {
         mTransmissionStandard = new TransmissionStandard();
         Debug.Log("Standard transmission detected");
-
     }
     public void ActivateKitt()
     {
         //Debug.Log("K.I.T.T.: Were I to hazard a guess, I'd say into an old canyon.");
+        mCarBrand = CarBrand.Pontiac;
         MakeCar(1);
-        Debug.Log("Engaging Alpha Circuit");
-        AddTransmissionAutomatic();
-        CheckSteering();
+        TurnCarOn();
+        Debug.Log("'Engaging Alpha Circuit'");
         DriveCar(1);
-  
-    }
 
+    }
+    public void MakeAFord()
+    {
+        mCarBrand = CarBrand.Ford;
+        MakeCar(0);
+        TurnCarOn();
+        Debug.Log("-Country Music Plays on Stereo-");
+        DriveCar(0);
+    }
+    public void MakeAToyota()
+    {
+        mCarBrand = CarBrand.Toyota;
+        MakeCar(0);
+        TurnCarOn();
+        Debug.Log("-Techno Music Plays on Stereo-");
+        DriveCar(0);
+    }
+    enum CarBrand
+    {
+        Ford,
+        Pontiac,
+        Toyota
+    }
     //public void ForewardMotion()
     //{
     //    mWheel[0].Move();

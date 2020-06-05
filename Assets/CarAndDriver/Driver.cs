@@ -5,33 +5,14 @@ using UnityEngine;
 public class Driver : Human
 {
     private Car mCar;
-    private CarBrand mCarBrand;
     private void Drive()
     {
         Debug.Log("I am a driver, and I will now make a car.");
-        mCar = new Car();
-        mCarBrand = CarBrand.Pontiac; 
+        mCar = new Car(); 
         mCar.AddDriver(this);
-        mCar.MakeCar(0);
-        mCar.TurnCarOn();
-        mCar.CheckSteering();
-        mCar.DriveCar(0);
-        //mCar.AddTransmissionAutomatic();
-        //mCar.AddEngine();
-        //mCar.PutInD();
-        //mCar.AddHeadLights();
-        //mCar.AddWheels();
-        //mCar.AddTransmissionStandard();
-        //mCar.PutInFirst();
-        //Michael();
+        mCar.MakeAToyota();
+        //mCar.MakeAFord();
         //mCar.ActivateKitt();
-        //mCar.Forward();
-        //mCar.Darkness();
-        //mCar.HitTheGas();
-        //mCar.TurnRight();
-        //mCar.TurnLeft();
-       
-        Debug.Log("You are driving a " + mCarBrand); 
         
         //because I inherit from Human, I can call this method
         LiveAndDie();
@@ -42,13 +23,7 @@ public class Driver : Human
         
     }
 
-    enum CarBrand
-    {
-        Toyota,
-        Pontiac,
-        Subaru
-
-    }
+    
 
     //Entry point connection from Unity. Alex, ignore this section for now
     #region Static Access
